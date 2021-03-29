@@ -11,7 +11,6 @@ public class Configuration {
     public RestTemplate getRestTemplate() {
         return new RestTemplate();
     }
-
     @Bean
     public HttpHeaders getHttpHeaders() {
         return new HttpHeaders();

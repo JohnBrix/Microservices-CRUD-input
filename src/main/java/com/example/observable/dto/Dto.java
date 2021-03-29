@@ -5,9 +5,9 @@ import javax.validation.constraints.NotNull;
 import java.io.Serializable;
 import java.util.Date;
 
-public class Dto implements Serializable {
+public class Dto  {
 
-    private Long id;
+    private Integer id;
     @NotBlank(message = "Firstname cannot be blank!")
     private String firstName;
     @NotBlank(message = "Lastname cannot be blank!")
@@ -20,11 +20,24 @@ public class Dto implements Serializable {
     private String address;
     private Date dateCreated;
 
-    public Long getId() {
+    public Dto(Integer id, @NotBlank(message = "Firstname cannot be blank!") String firstName, @NotBlank(message = "Lastname cannot be blank!") String lastName, @NotNull(message = "BirthDate cannot be blank!") Date birthDate, @NotNull(message = "Age cannot be null") Integer age, @NotBlank(message = "Address cannot be blank!") String address, Date dateCreated) {
+        this.id = id;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.birthDate = birthDate;
+        this.age = age;
+        this.address = address;
+        this.dateCreated = dateCreated;
+    }
+
+    public Dto() {
+    }
+
+    public Integer getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
